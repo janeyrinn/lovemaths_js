@@ -1,3 +1,19 @@
+// listens for the page to be loaded before running the code
+document.addEventListener("DOMContentLoaded", function() {
+    let buttons = document.getElementsByTagName("button");
+    // itterates through the buttons
+    for (let button of buttons) {
+        button.addEventListener("click", function() {
+            if (this.getAttribute("data-type") === "submit") {
+                alert("You clicked Submit!");
+            } else {
+                let gameType = this.getAttribute("data-type");
+                alert(`You clicked ${gameType}`);
+            }
+        });
+    }
+});
+
 function runGame() {
 
 }
